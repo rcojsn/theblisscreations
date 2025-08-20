@@ -1,0 +1,42 @@
+.content-section {
+  background: white;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.content-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.content-text {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content-text p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.content-text p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .content-section {
+    padding: 2rem 0;
+  }
+  
+  .content-container {
+    padding: 0 1rem;
+  }
+  
+  .content-text p {
+    font-size: 0.95rem;
+  }
+}
