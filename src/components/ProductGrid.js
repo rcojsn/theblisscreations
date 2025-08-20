@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ProductGrid.css';
 
 const ProductGrid = () => {
@@ -50,6 +51,13 @@ const ProductGrid = () => {
         </div>
         
         <div className="grid-footer">
+          <div className="custom-order-cta">
+            <h3>Want Something Unique?</h3>
+            <p>Create your own personalized balloon gift with our step-by-step designer!</p>
+            <Link to="/custom-order" className="custom-order-cta-btn">
+              🎨 Create Custom Order
+            </Link>
+          </div>
           <button className="load-more-btn">View All Products</button>
         </div>
       </div>

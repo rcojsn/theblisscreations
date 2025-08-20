@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -16,7 +17,9 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-container">
         <div className="nav-logo">
-          <h2>The Bliss Creations</h2>
+          <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <h2>The Bliss Creations</h2>
+          </Link>
         </div>
         
         <ul className="nav-menu">
@@ -121,7 +124,7 @@ const Navbar = () => {
           </li>
 
           <li className="nav-item">
-            <a href="#custom" className="nav-link">Custom Orders</a>
+            <Link to="/custom-order" className="nav-link custom-order-highlight">Create Custom Order</Link>
           </li>
 
           <li className="nav-item">

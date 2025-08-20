@@ -178,6 +178,32 @@
   font-weight: 700;
 }
 
+.custom-order-highlight {
+  background: linear-gradient(135deg, #27ae60, #2ecc71) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+  animation: pulse 2s infinite;
+}
+
+.custom-order-highlight:hover {
+  background: linear-gradient(135deg, #229954, #27ae60) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(39, 174, 96, 0.5);
+  }
+  100% {
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+  }
+}
+
 @keyframes fadeInDown {
   from {
     opacity: 0;
