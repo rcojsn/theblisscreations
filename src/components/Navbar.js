@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useCart } from '../contexts/CartContext';
 import './Navbar.css';
 
 const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const { getCartItemCount } = useCart();
 
   const handleMouseEnter = (menu) => {
     setActiveDropdown(menu);
@@ -134,6 +136,10 @@ const Navbar = () => {
           <li className="nav-item">
             <a href="#contact" className="nav-link">Contact</a>
           </li>
+
+          <li className="nav-item">
+            <Link to="/orders" className="nav-link">My Orders</Link>
+          </li>
         </ul>
 
         <div className="nav-actions">
@@ -141,7 +147,9 @@ const Navbar = () => {
             <input type="text" placeholder="Search products..." className="search-input" />
             <button className="search-btn">🔍</button>
           </div>
-          <button className="cart-btn">🛒 <span className="cart-count">0</span></button>
+          <Link to="/cart" className="cart-btn">
+            🛒 <span className="cart-count">{getCartItemCount()}</span>
+          </Link>
         </div>
       </div>
     </nav>

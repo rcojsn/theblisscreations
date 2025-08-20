@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useCart } from '../contexts/CartContext';
 import './ProductGrid.css';
 
 const ProductGrid = () => {
+  const { addToCart } = useCart();
+  
   const products = [
     { id: 1, title: 'Birthday Balloon Bouquet', category: 'Birthday', price: '$45' },
     { id: 2, title: 'Anniversary Romance Set', category: 'Anniversary', price: '$75' },
@@ -17,6 +20,10 @@ const ProductGrid = () => {
     { id: 11, title: 'Kids Party Favorites', category: 'Kids Party', price: '$70' },
     { id: 12, title: 'Sympathy Arrangement', category: 'Sympathy', price: '$35' }
   ];
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
+  };
 
   return (
     <section className="product-grid-section">
@@ -43,7 +50,12 @@ const ProductGrid = () => {
                 <h3 className="product-title">{product.title}</h3>
                 <div className="product-footer">
                   <span className="product-price">{product.price}</span>
-                  <button className="add-to-cart-btn">Add to Cart</button>
+                  <button 
+                    className="add-to-cart-btn"
+                    onClick={() => handleAddToCart(product)}
+                  >
+                    Add to Cart
+                  </button>
                 </div>
               </div>
             </div>
